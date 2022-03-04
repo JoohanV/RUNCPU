@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes>
+    <entry>
+      <string>Description</string>
+      <string>The InstructionDecoder component, which serves as a hub to control many of the signals to other components. It implements both the fetch operation, and execution of machine code (including decoding).</string>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>12</int>
+    </entry>
+  </attributes>
+  <visualElements>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>The instruction machine code input. If the CPU is in the fetch phase and a rising clock signal occurs, this machine code is stored in the internal instruction register (IR), so that it can be decoded and executed.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Instruction</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Destination register output, which determines the register that should store the result of a data operation. A data operation is either an ALU computation, or a read from an external device, such as RAM.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Reg_dest</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>B register output, which determines the register to be used for the second operand.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Reg_B</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>A register output, which determines the register to be used for the first operand.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Reg_A</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Opcode output, which determines the operation the ALU should perform.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Opcode</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>3</int>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Instruction condition output, which contains the condition under which the instruction should be executed.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Condition</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="100"/>
+    </visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>

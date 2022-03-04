@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes>
+    <entry>
+      <string>Description</string>
+      <string>The Radboud University Nijmegen Central Processing Unit (RUNCPU), which is a basic 32-bit CPU for the Processors course, part of the Computing Science Bachelor.</string>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>12</int>
+    </entry>
+  </attributes>
+  <visualElements>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Clock</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-200" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>The addressbus signal, which determines the address of a read or write operation. For a write operation the address is where a value being written by the CPU should be stored. For a read operation the address is where a value being read by the CPU should be read from.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Addressbus</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-120" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>The databus signal from the CPU. Any values written by the CPU will be stored here.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Databus_out</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-120" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Active low read enabled signal. When a read operation is performed by the CPU this value is set to low.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>nRE</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-120" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Active low write enabled signal. When a write operation is performed by the CPU this value is set to low.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>nWE</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-120" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Determines whether the CPU is in the halted state, in which it shall remain until the CPU is restarted.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Halted</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-120" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ALU.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ALU</string>
+        </entry>
+      </elementAttributes>
+      <pos x="80" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>FlagRegisterBank.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>FlagRegisterBank</string>
+        </entry>
+      </elementAttributes>
+      <pos x="80" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>RegisterBank.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>RegisterBank</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-220" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tester.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Tester</string>
+        </entry>
+      </elementAttributes>
+      <pos x="80" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Timer.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Timer</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-220" y="120"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>The databus signal to the CPU. Any values read (or instructions fetched) by the CPU will be stored here.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Databus_in</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-200" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>InstructionDecoder.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>InstructionDecoder</string>
+        </entry>
+      </elementAttributes>
+      <pos x="80" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>add</string>
+        </entry>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>Clock Databus_in Halted nRE nWE Databus_out Addressbus R3
+# The first line of test data must be the header, which contains the inputs and outputs used in the test case.
+# It is possible to use registers in test cases by enabling their &apos;use as measurement value&apos; attribute in the advanced tab.
+# The R0-R15 registers have this attribute enabled in the provided template.
+
+# These init statements are used to set the register contents when the simulation is started.
+# Note that all init statements are collected and executed first. Interleaving them with regular test data has no effect.
+# If you wish to test other instructions, or with different values, you must add a new test case component to the circuit.
+# If you do not do this, the tests will run sequentially, meaning the next test will use the CPU state obtained after executing the prior test.
+# This is reflected below in the last test data row that checks if the program counter increased by 4.
+init R1=4;
+init R2=5;
+
+# ADD R1, R2, R3
+# The four test data lines below describe the testing of the ADD R1, R2, R3 instruction.
+# We first load the machine code into the Databus_in, and then drive the clock to step through the full instruction cycle once.
+# Note that the first two columns (in this case) are inputs, meaning they will be set to the provided value.
+# The other columns are outputs, which are evaluated after the inputs have been set, and then compared against the given expected values.
+# The value &apos;x&apos; denotes a &apos;do not care&apos; value. Please click the &apos;Help&apos; button in this dialog for more information regarding test cases.
+0     0x6400123f 0      0   1   x           0          x
+1     0x6400123f 0      x   x   x           x          x
+0     0          0      1   1   x           x          x
+1     0          0      1   1   x           x          9
+
+# Fetch next instruction, check if the program counter increased by 4...
+0     0          0      0   1   x           4          x</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="-360" y="0"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>init</string>
+        </entry>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>Clock Databus_in Halted nRE nWE Databus_out Addressbus
+0     0          0      0   1   x           0</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="-360" y="-80"/>
+    </visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>
