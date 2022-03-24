@@ -1,0 +1,20 @@
+A B Opcode Result Carry Overflow Negative Zero
+
+loop(i, 256)
+    # determine random values for A and B inputs
+    let a = random(1<<32);
+    let b = random(1<<32);
+
+    # compute expected Result
+    let rot = a & 31;
+    let r = (b << rot) | (b >> (32-rot));
+
+    # determine expected flags
+    let c = r & 1;
+    let o = ((b>>31) & 1) != ((r>>31) & 1);
+    let n = (r>>31) & 1;
+    let z = r=0;
+
+    # perform rotation, and then check Result and flags are as expected
+    (a) (b) 5 (r) (c) (o) (n) (z)
+end loop

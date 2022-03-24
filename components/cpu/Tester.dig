@@ -220,6 +220,32 @@
       </elementAttributes>
       <pos x="460" y="380"/>
     </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>Condition Carry_in Overflow_in Negative_in Zero_in TestSucceeds
+
+loop(c, 2)
+  loop(o, 2)
+    loop(n, 2)
+      loop(z, 2)
+        0b0100 (c) (o) (n) (z) (n)
+        0b1000 (c) (o) (n) (z) (c &amp; !z)
+        0b1100 (c) (o) (n) (z) ((n = o) &amp; !z)
+        0b1101 (c) (o) (n) (z) ((n != o) | z)
+        0b1111 (c) (o) (n) (z) 1
+      end loop
+    end loop
+  end loop
+end loop</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="-260" y="80"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
