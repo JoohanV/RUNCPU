@@ -306,12 +306,12 @@ init R2=5;
       <elementName>Multiplexer</elementName>
       <elementAttributes>
         <entry>
-          <string>Bits</string>
-          <int>32</int>
-        </entry>
-        <entry>
           <string>Selector Bits</string>
           <int>3</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
         </entry>
       </elementAttributes>
       <pos x="-240" y="-540"/>
@@ -357,6 +357,26 @@ init R2=5;
         </entry>
       </elementAttributes>
       <pos x="-320" y="-400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Text</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Demultiplexer should be replaced</string>
+        </entry>
+      </elementAttributes>
+      <pos x="640" y="-240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Text</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Might be wrong</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-320" y="-580"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -527,10 +547,6 @@ init R2=5;
     <wire>
       <p1 x="960" y="420"/>
       <p2 x="980" y="420"/>
-    </wire>
-    <wire>
-      <p1 x="780" y="-40"/>
-      <p2 x="820" y="-40"/>
     </wire>
     <wire>
       <p1 x="540" y="-40"/>
@@ -789,6 +805,10 @@ init R2=5;
       <p2 x="-180" y="-120"/>
     </wire>
     <wire>
+      <p1 x="780" y="-120"/>
+      <p2 x="820" y="-120"/>
+    </wire>
+    <wire>
       <p1 x="-800" y="120"/>
       <p2 x="-680" y="120"/>
     </wire>
@@ -1026,7 +1046,7 @@ init R2=5;
     </wire>
     <wire>
       <p1 x="820" y="-200"/>
-      <p2 x="820" y="-40"/>
+      <p2 x="820" y="-120"/>
     </wire>
     <wire>
       <p1 x="-760" y="0"/>
