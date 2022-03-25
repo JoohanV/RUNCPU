@@ -1,0 +1,7 @@
+Names: Johan Veenstra & Floris Farro
+S-numbers: s1081832 & s1025965
+
+Unimplemented functionality and bugs:
+We are aware of the fact that the timing of information provided to other components by the InstructionDecoder is incorrect. As far as we know, all other components are functioning correctly, and the InstructionDecoder itself provides the correct information, albeit at the wrong time.
+We could not grasp the concept of this timing in time for the deadline, in particular we could not figure out how to get information from the InstructionDecoder to the RegisterBank in time for the rising clock edge to store the information in a register.
+

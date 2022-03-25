@@ -1201,12 +1201,21 @@
     </visualElement>
     <visualElement>
       <elementName>Register</elementName>
-      <elementAttributes/>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>UseArithmeticIfInExecute</string>
+        </entry>
+      </elementAttributes>
       <pos x="2500" y="-820"/>
     </visualElement>
     <visualElement>
       <elementName>Register</elementName>
       <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>UseRegDestIfInFetchOrExecute</string>
+        </entry>
         <entry>
           <string>Bits</string>
           <int>4</int>
@@ -1971,12 +1980,12 @@
       <p2 x="920" y="-760"/>
     </wire>
     <wire>
-      <p1 x="2180" y="-760"/>
-      <p2 x="2400" y="-760"/>
-    </wire>
-    <wire>
       <p1 x="2480" y="-760"/>
       <p2 x="2820" y="-760"/>
+    </wire>
+    <wire>
+      <p1 x="2160" y="-760"/>
+      <p2 x="2400" y="-760"/>
     </wire>
     <wire>
       <p1 x="2400" y="-760"/>
@@ -2071,16 +2080,12 @@
       <p2 x="2180" y="-780"/>
     </wire>
     <wire>
-      <p1 x="2180" y="-760"/>
-      <p2 x="2180" y="-680"/>
+      <p1 x="2180" y="-680"/>
+      <p2 x="2180" y="-620"/>
     </wire>
     <wire>
       <p1 x="2180" y="180"/>
       <p2 x="2180" y="300"/>
-    </wire>
-    <wire>
-      <p1 x="2180" y="-680"/>
-      <p2 x="2180" y="-620"/>
     </wire>
     <wire>
       <p1 x="2180" y="-620"/>
@@ -2428,7 +2433,7 @@
     </wire>
     <wire>
       <p1 x="2160" y="-980"/>
-      <p2 x="2160" y="60"/>
+      <p2 x="2160" y="-760"/>
     </wire>
     <wire>
       <p1 x="2160" y="60"/>
@@ -2437,6 +2442,10 @@
     <wire>
       <p1 x="2160" y="160"/>
       <p2 x="2160" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="2160" y="-760"/>
+      <p2 x="2160" y="60"/>
     </wire>
     <wire>
       <p1 x="2800" y="-320"/>
